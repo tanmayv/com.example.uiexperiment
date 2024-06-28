@@ -7,8 +7,22 @@
 	core:require="{
 		formatter: 'com/example/uiexperiment/model/formatter'
 	}">
-
-	<Page
+<Page title="Wizard Example">
+                    <content>
+                        <Wizard id="postLoginWizard" renderMode="Page" finishButtonText="Finish">
+                            <WizardStep id="step1" title="Step 1" validated="true">
+                                <Text text="Content for Step 1"/>
+                            </WizardStep>
+                            <WizardStep id="step2" title="Step 2" validated="true">
+                                <Text text="Content for Step 2"/>
+                            </WizardStep>
+                            <WizardStep id="step3" title="Step 3" validated="true">
+                                <Text text="Content for Step 3"/>
+                            </WizardStep>
+                        </Wizard>
+                    </content>
+                </Page>
+	<!-- <Page
 		title="{i18n>appTitle}"
 		id="page">
 		<content>
@@ -25,6 +39,6 @@
 				</additionalContent>
 			</IllustratedMessage>
 		</content>
-	</Page>
+	</Page> -->
 
 </mvc:View>
