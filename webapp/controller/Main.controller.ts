@@ -4,6 +4,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import Wizard from "sap/m/Wizard";
 import WizardStep from "sap/m/WizardStep";
 import Text from "sap/m/Text";
+import Constant from "../constant";
 
 /**
  * @namespace com.example.uiexperiment.controller
@@ -18,6 +19,7 @@ type PostLoginResponse = {
 		action: { label: string; url: string }
 	};
 };
+
 /**
  * @namespace com.example.uiexperiment.controller
  */
@@ -31,50 +33,24 @@ export default class Main extends BaseController {
  * @ignore
  **/
 	public onInit(): void {
-		const response: PostLoginResponse[] = [
-			{
-				key: "step1",
-				rank: 1,
-				pageContext: {
-					title: "Page Title 1",
-					description: "Page Description 1",
-					action: {
-						label: "Update",
-						url: "/step1"
-					}
-				}
-			},
-			{
-				key: "step2",
-				rank: 2,
-				pageContext: {
-					title: "Page Title 2",
-					description: "Page Description 2",
-					action: {
-						label: "Update",
-						url: "/step2"
-					}
-				}
-			},
-			{
-				key: "step3",
-				rank: 3,
-				pageContext: {
-					title: "Page Title 3",
-					description: "Page Description 3",
-					action: {
-						label: "Update",
-						url: "/step3"
-					}
-				}
-			}
-		];
-
-		this.renderWizard(response);
+		this.fetchPostLogin().then(this.renderWizard.bind(this));
 	}
 
+	private async fetchPostLogin() {
+		console.log("Calling api");
+		const response = await fetch(Constant.ApiPath('echo'), {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json', // Specify the content type
+			},
+			body: Constant.postLoginRes, // Convert the data to a JSON string
+		});
+		console.log("Got response");
+
+		return await response.json();
+	}
 	private renderWizard(wizardData: PostLoginResponse[]) {
-		const wizard: Wizard = this.byId("postLoginWizard") as Wizard;
+		const wizard: Wizard = this.byId("id.postLoginWizard") as Wizard;
 		wizard.removeAllSteps();
 		for (const stepdata of wizardData) {
 			const wizardStep = new WizardStep(stepdata.key, {

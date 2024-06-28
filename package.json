@@ -5,6 +5,7 @@
 	"author": "Tanmay Vijayvargiya",
 	"license": "Apache-2.0",
 	"scripts": {
+		"mock-server": "python3 echo_server/echo_server.py",
 		"clean": "rimraf dist coverage",
 		"build": "ui5 build --clean-dest",
 		"build:opt": "ui5 build self-contained --clean-dest --all",
