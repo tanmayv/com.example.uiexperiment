@@ -7,3 +7,8 @@ export type PostLoginResponse = {
 		action: { label: string; url: string }
 	};
 };
+
+export type PostLoginState = {
+    pages: PostLoginResponse[];
+    currentPage?: string;
+}

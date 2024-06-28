@@ -1,0 +1,16 @@
+<mvc:View
+	controllerName="com.example.uiexperiment.controller.Home"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/example/uiexperiment/model/formatter'
+	}"
+>
+	<Page title="Home Page">
+		<content>
+            <Text text="Home Page" />
+		</content>
+	</Page>
+</mvc:View>

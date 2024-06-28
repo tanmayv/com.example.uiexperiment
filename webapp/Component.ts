@@ -20,6 +20,7 @@ export default class Component extends UIComponent {
 		this.setModel(models.createDeviceModel(), "device");
 
 		// create the views based on the url/hash
+		console.log("Router is initialized");
 		this.getRouter().initialize();
 	}
 
@@ -44,4 +45,5 @@ export default class Component extends UIComponent {
 		}
 		return this.contentDensityClass;
 	}
+
 }

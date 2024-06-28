@@ -70,12 +70,20 @@
 					"target": "main"
 				},
 				{
+					"pattern": "home",
+					"name": "home",
+					"target": "home"
+				},
+				{
 					"pattern": "postlogin",
 					"name": "postlogin",
 					"target": "postlogin"
 				}
 			],
 			"targets": {
+				"home": {
+					"viewName": "Home"
+				},
 				"main": {
 					"viewName": "Main"
 				},

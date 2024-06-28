@@ -8,11 +8,15 @@
 		formatter: 'com/example/uiexperiment/model/formatter'
 	}"
 >
-	<Page title="Wizard Example">
+	<Page title="Some other title">
 		<content>
 			<Button
 				text="Go to post login"
 				press="onGoToPostLoginButtonPress"
+			/>
+			<Button
+				text="Go to home login"
+				press="onGoToHomeButtonPress"
 			/>
 		</content>
 	</Page>

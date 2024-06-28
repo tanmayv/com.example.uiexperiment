@@ -1,14 +1,22 @@
 import MessageBox from "sap/m/MessageBox";
 import BaseController from "./BaseController";
+import PostLoginService from "../service/postlogin.service";
 
 /**
  * @namespace com.example.uiexperiment.controller
  */
 export default class Main extends BaseController {
-	public sayHello(): void {
-		MessageBox.show("Hello World!");
-	}
-	onGoToPostLoginButtonPress() {
-		this.getRouter().navTo("postlogin")
+	onInit(): void {
+		this.checkPostLoginState();
+	};
+
+	private async checkPostLoginState() {
+		const state = await PostLoginService.GetInstance().getPostLoginState();
+		if (state?.currentPage) {
+			this.getRouter().navTo("postlogin");
+		} else {
+			this.getRouter().navTo("home");
+		}
+
 	}
 }

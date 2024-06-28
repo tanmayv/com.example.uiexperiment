@@ -9,7 +9,12 @@ import Text from "sap/m/Text";
  * @namespace com.example.uiexperiment.controller
  */
 export default class PostLogin extends Controller {
+
+	onExit(): void {
+		console.log("Post Login component OnExit");
+	};
 	public onInit(): void {
+        console.log("Post Login page OnInit");
 		this.fetchPostLogin().then(this.renderWizard.bind(this));
 	}
 
@@ -24,9 +29,11 @@ export default class PostLogin extends Controller {
 
 		return await response.json();
 	}
+
 	private renderWizard(wizardData: PostLoginResponse[]) {
 		const wizard: Wizard = this.byId("id.postLoginWizard") as Wizard;
 		wizard.removeAllSteps();
+        console.log("Post login response", wizardData);
 		for (const stepdata of wizardData) {
 			const wizardStep = new WizardStep(stepdata.key, {
 				title: stepdata.pageContext.title,

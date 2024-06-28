@@ -13,7 +13,15 @@
                 id="id.postLoginWizard"
                 renderMode="Page"
                 finishButtonText="Finish"
-            />
+                
+            >
+           <!-- We need to have atleast three WizardStep or the Wizard component is in unrendarable state which breaks **ALL** navigation. WTF  -->
+           <!-- We can probably fix this by creating the Wizard also in JS, once we have the data. But yeah, Fuck UI5. -->
+
+            <WizardStep />
+            <WizardStep />
+            <WizardStep />
+            </Wizard>
         </content>
     </Page>
 </mvc:View>
