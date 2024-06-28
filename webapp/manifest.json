@@ -68,12 +68,19 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},
+				{
+					"pattern": "postlogin",
+					"name": "postlogin",
+					"target": "postlogin"
 				}
 			],
 			"targets": {
 				"main": {
-					"viewId": "main",
 					"viewName": "Main"
+				},
+				"postlogin": {
+					"viewName": "PostLogin"
 				}
 			}
 		}

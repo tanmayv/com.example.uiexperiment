@@ -10,10 +10,9 @@
 >
 	<Page title="Wizard Example">
 		<content>
-			<Wizard
-				id="id.postLoginWizard"
-				renderMode="Page"
-				finishButtonText="Finish"
+			<Button
+				text="Go to post login"
+				press="onGoToPostLoginButtonPress"
 			/>
 		</content>
 	</Page>

@@ -1,0 +1,19 @@
+<mvc:View
+    controllerName="com.example.uiexperiment.controller.PostLogin"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <Page title="Wizard Example">
+        <content>
+            <Wizard
+                id="id.postLoginWizard"
+                renderMode="Page"
+                finishButtonText="Finish"
+            />
+        </content>
+    </Page>
+</mvc:View>
