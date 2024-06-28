@@ -3,6 +3,7 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
+    xmlns:custom="com.example.uiexperiment.control"
     displayBlock="true"
     height="100%"
     busyIndicatorDelay="0"
@@ -13,14 +14,12 @@
                 id="id.postLoginWizard"
                 renderMode="Page"
                 finishButtonText="Finish"
+                steps="{/}"
                 
             >
-           <!-- We need to have atleast three WizardStep or the Wizard component is in unrendarable state which breaks **ALL** navigation. WTF  -->
-           <!-- We can probably fix this by creating the Wizard also in JS, once we have the data. But yeah, Fuck UI5. -->
-
-            <WizardStep />
-            <WizardStep />
-            <WizardStep />
+                <steps>
+                    <WizardStep title="{key}" />
+                </steps>
             </Wizard>
         </content>
     </Page>
